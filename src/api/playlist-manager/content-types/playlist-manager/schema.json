@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "playlist_managers",
+  "info": {
+    "singularName": "playlist-manager",
+    "pluralName": "playlist-managers",
+    "displayName": "PlaylistManager"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "playlist_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::playlist.playlist",
+      "mappedBy": "IDFK"
+    },
+    "track_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::track.track",
+      "mappedBy": "IDFK"
+    }
+  }
+}

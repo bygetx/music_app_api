@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tracks",
+  "info": {
+    "singularName": "track",
+    "pluralName": "tracks",
+    "displayName": "Track"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "track_name": {
+      "type": "string",
+      "required": true
+    },
+    "audio": {
+      "allowedTypes": [
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "subtitles_srt": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "subtitles_txt": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "cover_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "duration": {
+      "type": "decimal",
+      "required": true
+    },
+    "IDFK": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::playlist-manager.playlist-manager",
+      "inversedBy": "track_id"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "playlists",
+  "info": {
+    "singularName": "playlist",
+    "pluralName": "playlists",
+    "displayName": "Playlist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "playlist_name": {
+      "type": "string",
+      "required": true
+    },
+    "total_tracks": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "IDFK": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::playlist-manager.playlist-manager",
+      "inversedBy": "playlist_id"
+    }
+  }
+}
